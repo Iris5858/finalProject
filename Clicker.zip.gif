@@ -1,0 +1,6 @@
+Clicker
+Private Sub bgcblue_clicker(sender As Object, e As EventArgs) Handles bgcblue.click
+
+
+
+
