@@ -1,6 +1,27 @@
 Clicker
-Private Sub bgcblue_clicker(sender As Object, e As EventArgs) Handles bgcblue.click
-
-
-
+Private Sub bgcblue_Click(sender As Object, e As EventArgs) Handles bgcblue.Click
+        BackColor = Color.DeepSkyBlue
+    End Sub
+Module Module1
+    Private m_FormBackgroundColor As Color
+    Public Property FormBackgroundColor As Color
+        Get
+            Return m_FormBackgroundColor
+        End Get
+        Set(value As Color)
+            m_FormBackgroundColor = value
+            For Each Frm As Form In Application.OpenForms
+                Frm.BackColor = m_FormBackgroundColor
+            Next
+        End Set
+    End Property
+End Module
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Me.BackColor = FormBackgroundColor
+    End Sub
+End Class
+Private Sub bgcblue_Click(sender As Object, e As EventArgs) Handles bgcblue.Click
+    FormBackgroundColor = Color.DeepSkyBlue
+End Sub
 
